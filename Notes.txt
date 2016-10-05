@@ -1,0 +1,32 @@
+1. Run the mongo server
+2. Run the mono client in diffrent prompt from the same path
+
+1. mongod
+2. mongo
+
+comaands
+
+use dll-db
+show collections
+
+adding record
+>db.sessions.insert({name:"Core Java"})
+to get the data
+>db.seesions.find()
+
+
+
+1. mongodb is not running
+>mongod
+Throws an error
+
+2016-10-04T09:07:39.040+0530 I STORAGE  [initandlisten] exception in initAndList
+en: 28663 Cannot start server. The default storage engine 'wiredTiger' is not av
+ailable with this build of mongod. Please specify a different storage engine exp
+licitly, e.g. --storageEngine=mmapv1., terminating
+2016-10-04T09:07:39.041+0530 I CONTROL  [initandlisten] dbexit:  rc: 100
+
+Soln:
+
+mongod --storageEngine=mmapv1 --dbpath [your-path]
+mongod --storageEngine=mmapv1 --dbpath c:/data
